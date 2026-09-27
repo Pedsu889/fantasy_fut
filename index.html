@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matchday — Simulador de Futebol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">M</span><span>MATCHDAY</span></a>
+      <button class="new-match" id="newMatch"><span>＋</span> Nova partida</button>
+      <p class="nav-title">COMPETIÇÕES</p>
+      <nav class="league-list" id="leagueList"></nav>
+      <div class="side-bottom"><div class="live-dot"></div><span>3.842 partidas simuladas hoje</span></div>
+    </aside>
+
+    <section class="game-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" aria-label="Menu">☰</button>
+        <div class="crumb"><span>Premier League</span><i></i><b>Rodada 28</b></div>
+        <div class="top-actions"><a class="download-game" href="downloads/matchday-simulador.html" download="matchday-simulador.html" aria-label="Baixar o jogo para jogar offline">⇩ <span>Baixar jogo</span></a><button class="icon-button" aria-label="Som">♬</button><button class="icon-button" aria-label="Configurações">⚙</button></div>
+      </header>
+
+      <section class="scoreboard">
+        <div class="team team-home"><div class="crest wolves">W</div><div><strong>Wolverhampton</strong><small>Casa</small></div></div>
+        <div class="score-center"><div class="clock" id="clock">34:18</div><div class="score"><span id="homeScore">0</span><em>–</em><span id="awayScore">0</span></div><div class="status"><span></span> AO VIVO</div></div>
+        <div class="team team-away"><div><strong>Brighton</strong><small>Visitante</small></div><div class="crest brighton">B</div></div>
+      </section>
+
+      <section class="match-layout">
+        <div class="pitch-card">
+          <div class="pitch-head"><div><span class="eyebrow">MELHORES MOMENTOS</span><h1 id="momentTitle">O jogo começou!</h1></div><div class="period" id="period">1º TEMPO · 1/4</div></div>
+          <div class="pitch" id="pitch">
+            <div class="grass-lines"></div><div class="center-circle"></div><div class="halfway"></div><div class="box box-left"></div><div class="box box-right"></div><div class="goal goal-left"></div><div class="goal goal-right"></div>
+            <div class="ball" id="ball"></div><div id="players"></div>
+            <div class="event-badge" id="eventBadge"><span>▶</span> Acompanhe o lance</div>
+          </div>
+          <div class="commentary"><div class="commentary-icon">⌁</div><p id="commentary">As equipes se estudam nos minutos iniciais.</p><button id="skipButton">Pular lance <span>→</span></button></div>
+        </div>
+        <aside class="match-info">
+          <section class="panel live-panel"><div class="panel-title"><span>PARTIDA AO VIVO</span><span class="pulse">●</span></div><div class="moment-progress" id="progress"></div><div class="legend"><span><i class="orange"></i>WOL</span><span><i class="blue"></i>BHA</span></div></section>
+          <section class="panel stats"><div class="panel-title"><span>ESTATÍSTICAS</span><button id="statsToggle">Detalhes</button></div><div class="stat"><span>Posse de bola</span><b>48% <i></i> 52%</b><div><u style="width:48%"></u></div></div><div class="stat"><span>Finalizações</span><b id="shots">3 <i></i> 2</b><div><u style="width:54%"></u></div></div><div class="stat"><span>Chances claras</span><b id="chances">1 <i></i> 1</b><div><u style="width:50%"></u></div></div></section>
+          <section class="panel next"><span class="eyebrow">PRÓXIMO LANCE</span><h3 id="nextMoment">Ataque perigoso</h3><p>Uma nova emoção está sendo preparada.</p></section>
+        </aside>
+      </section>
+      <footer><span>SIMULAÇÃO AO VIVO</span><span>·</span><span>Dados e movimentos gerados em tempo real</span></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
